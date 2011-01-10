@@ -39,7 +39,9 @@ function StreamHandler(host, port, delimiter) {
 			}
 			self.buffer = arr[arr.length - 1];
 		}
-		self.conn.resume();
+		if (self.conn.readyState == 'open') {
+			self.conn.resume();
+		}
 	});
 	self.conn.on('close', function(had_error) {
 		if (!had_error && self.buffer.length > 0) {
@@ -50,7 +52,7 @@ function StreamHandler(host, port, delimiter) {
 sys.inherits(StreamHandler, events.EventEmitter);
 
 StreamHandler.prototype.close = function() {
-	//this.conn.destroy();
+	this.conn.destroy();
 }
 
 StreamHandler.prototype.write = function(data) {

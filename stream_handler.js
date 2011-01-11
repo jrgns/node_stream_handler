@@ -20,13 +20,13 @@ function StreamHandler(host, port, delimiter) {
 
 	self.conn = net.createConnection(self.port, self.host);
 	self.conn.setEncoding("utf8");
-	
-	self.conn.on('connection', function () {
-		console.log('Connected to ' + self.host + ':' + self.port);
-	});
-	
+
 	self.conn.on('error', function(err) {
-		self.emit('error', err);
+		try {
+			self.emit('error', 'Stream error: ' + err, err);
+		} catch (e) {
+			console.log('' + err);
+		}
 	});
 	self.conn.on('data', function(data) {
 		self.conn.pause();
@@ -51,10 +51,10 @@ function StreamHandler(host, port, delimiter) {
 }
 sys.inherits(StreamHandler, events.EventEmitter);
 
-StreamHandler.prototype.close = function() {
-	this.conn.destroy();
-}
-
 StreamHandler.prototype.write = function(data) {
 	this.conn.write(data);
+}
+
+StreamHandler.prototype.destroy = function() {
+	this.conn.destroy();
 }

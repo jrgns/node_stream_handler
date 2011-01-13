@@ -17,8 +17,9 @@ Example
 This is a simple POP3 login and listing.
 
     var   sys           = require('sys')
-        , StreamHandler = require('node_stream_handler')
-        
+        , StreamHandler = require('stream-handler')
+    ;
+     
     var stream = new StreamHandler('example.com', 110);
     stream.on('line', function(line) {
         console.log('Received Line: ' + line);

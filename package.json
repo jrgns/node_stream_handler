@@ -1,6 +1,7 @@
 {
-	name: "node_stream_handler",
-	description: "Simple stream handler to simplify challenge / response type servers such as SMTP and POP.",
+	name: "stream-handler",
+	main: "./node_stream_handler.js",
+	description: "Simple stream handler that emits line events everytime a specified delimiter is returned by the server.",
 	homepage: "http://github.com/jrgns/node_stream_handler",
 	version: "0.1.0",
 	engines: ["JavaScript", "node v0.3.2-pre"],

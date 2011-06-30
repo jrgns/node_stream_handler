@@ -1,16 +1,16 @@
 {
-	name: "stream-handler",
-	main: "./node_stream_handler.js",
-	description: "Simple stream handler that emits line events everytime a specified delimiter is returned by the server.",
-	homepage: "http://github.com/jrgns/node_stream_handler",
-	version: "0.1.0",
-	engines: ["JavaScript", "node v0.3.2-pre"],
-	author: "J Jrgns du Toit <jrgns@jrgns.net>",
-	repository: {
+	"name": "stream-handler",
+	"main": "./node_stream_handler.js",
+	"description": "Simple stream handler that emits line events everytime a specified delimiter is returned by the server.",
+	"homepage": "http://github.com/jrgns/node_stream_handler",
+	"version": "0.1.1",
+	"engines": ["JavaScript", "node >= v0.3.2-pre"],
+	"author": "J Jrgns du Toit <jrgns@jrgns.net>",
+	"repository": {
 		type: "git",
 		url: "http://github.com/jrgns/node_stream_handler"
 	},
-	licenses: [
+	"licenses": [
 		{
 			type: "MIT",
 			url: "http://github.com/jrgns/node_stream_handler/raw/master/License.md"

@@ -1,5 +1,5 @@
 var   events = require('events')
-    , sys    = require('sys')
+    , util = require('util')
     , net    = require('net')
 ;
 
@@ -49,7 +49,7 @@ function StreamHandler(host, port, delimiter) {
 		}
 	});
 }
-sys.inherits(StreamHandler, events.EventEmitter);
+util.inherits(StreamHandler, events.EventEmitter);
 
 StreamHandler.prototype.write = function(data) {
 	this.conn.write(data);

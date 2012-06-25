@@ -16,7 +16,7 @@ Example
 
 This is a simple POP3 login and listing.
 
-    var   sys           = require('sys')
+    var   util = require('util')
         , StreamHandler = require('stream-handler')
     ;
      
